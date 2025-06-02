@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=640, initial-scale=0.5, maximum-scale=0.5, user-scalable=no">
+  <title>维C维E护齿大作战</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 启动页 -->
+  <div id="page-loading" class="page active">
+    <img src="assets/bg-loading.jpg" class="bg-full" alt="背景">
+    <div class="center">
+      <img src="assets/logo.png" class="logo" alt="纳爱斯Logo">
+      <h1 class="slogan">养龈健齿  微笑Nice</h1>
+      <div id="loading-bar"><div id="loading-progress"></div></div>
+      <button id="btn-start">开始游戏</button>
+    </div>
+  </div>
+
+  <!-- 玩法说明页 -->
+  <div id="page-intro" class="page">
+    <h2>玩法说明</h2>
+    <p>收集纳爱斯臻护抗口气牙膏（冰薄橙柚）三大核心成分：</p>
+    <div class="icons">
+      <div><img src="assets/icon-probiotic.png"><span>益生菌</span></div>
+      <div><img src="assets/icon-vitc.png"><span>维生素C</span></div>
+      <div><img src="assets/icon-vite.png"><span>维生素E</span></div>
+    </div>
+    <p>消灭口腔细菌，积攒分数！</p>
+    <p>每关需在限定时间内完成目标分数，点击开始挑战！</p>
+    <button id="btn-intro-start">开始</button>
+    
+    <!-- page-intro 内部添加 -->
+<div class="game-info">
+  <p>元素得分：</p>
+  <ul>
+    <li>益生菌:1分</li>
+    <li>维C:1分</li>
+    <li>维E:1分</li>
+    <li><strong>细菌:2分</strong></li>
+  </ul>
+  <p>通关要求：</p>
+  <ul>
+    <li>第1关:20分</li>
+    <li>第2关:50分</li>
+    <li>第3关:120分</li>
+  </ul>
+</div>
+
+  </div>
+
+  <!-- 游戏页面 -->
+  <div id="page-game" class="page">
+    <canvas id="game-canvas" width="640" height="1030"></canvas>
+    <div id="hud">
+      <div><span class="label-probiotic">益生菌：</span><span id="count-probiotic">0</span></div>
+      <div><span class="label-vitc">维C：</span><span id="count-vitc">0</span></div>
+      <div><span class="label-vite">维E：</span><span id="count-vite">0</span></div>
+      <div><span class="label-bacteria">细菌消灭：</span><span id="count-bacteria">0</span></div>
+      <div><span class="label-score">当前得分：</span><span id="current-score">0</span></div> <!-- 新增这一行 -->
+    </div>
+  </div>
+
+  <!-- 关卡成功提示页 -->
+  <div id="page-level-success" class="page">
+    <div class="center">
+      <h2>成功！</h2>
+      <p>准备进入下一关</p>
+      <button id="btn-next-level">继续</button>
+    </div>
+  </div>
+
+  <!-- 游戏结束页（胜利或失败统一页） -->
+  <div id="page-result" class="page">
+    <h2 id="result-title">游戏结束</h2>
+    <p>核心成分收集：</p>
+    <ul>
+      <li>益生菌：<span id="res-probiotic"></span></li>
+      <li>维生素C：<span id="res-vitc"></span></li>
+      <li>维生素E：<span id="res-vite"></span></li>
+      <li>细菌消灭：<span id="res-bacteria"></span></li>
+    </ul>
+    <p id="result-message"></p>
+    <button id="btn-restart">再来一次</button>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
